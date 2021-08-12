@@ -13,4 +13,5 @@ echo "$SCRIPTNAME"
 
 #k3d image import $APP -c $CLUSTER_NAME --verbose
 
-SKAFFOLD_DEFAULT_REPO=dev skaffold run #--tail
+skaffold config set --kube-context k3d-"$CLUSTER_NAME" local-cluster true 
+skaffold run #--tail
