@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+metadata:
+  name: skaffold-github-actions-demo
+build:
+  artifacts:
+    - image: pyjokes
+deploy:
+  kubectl:
+    manifests:
+      - deployment.yaml
+      - service.yaml
