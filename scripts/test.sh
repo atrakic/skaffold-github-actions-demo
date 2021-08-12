@@ -12,7 +12,7 @@ SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
 docker images
-kubectl get all
+kubectl get all -o wide
 
 #APP=pyjokes-app
 #export POD=$(kubectl get pods --no-headers -o custom-columns=":metadata.name" -l "app=$APP")

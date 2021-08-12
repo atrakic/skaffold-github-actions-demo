@@ -13,4 +13,4 @@ echo "$SCRIPTNAME"
 
 #k3d image import $APP -c $CLUSTER_NAME --verbose
 
-skaffold run
+SKAFFOLD_DEFAULT_REPO=dev skaffold run #--tail
