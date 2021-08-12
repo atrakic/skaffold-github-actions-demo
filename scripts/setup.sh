@@ -14,7 +14,7 @@ echo "$SCRIPTNAME"
 # Create CI registry
 #k3d registry create registry.localhost --no-help --port 5000
 
-k3d cluster create "$CLUSTER_NAME" -s 1 -a 3 \
+k3d cluster create "$CLUSTER_NAME" -s 1 -a 1 \
   --wait \
   --timeout 60s \
   --port 8080:80@loadbalancer \
