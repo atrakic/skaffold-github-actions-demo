@@ -43,5 +43,5 @@ netstat -tlpn
 kubectl get nodes -o wide
 
 docker exec k3d-"$CLUSTER_NAME"-server-0 sh -c 'ctr version'
-docker exec -it k3d-"$CLUSTER_NAME"-agent-0 sh -c "nslookup k3d-registry.localhost"
+docker exec k3d-"$CLUSTER_NAME"-agent-0 sh -c "nslookup k3d-registry.localhost"
 # docker exec k3d-"$CLUSTER_NAME"-agent-1 sh -c 'ctr image list -q | grep "busybox:latest"'
