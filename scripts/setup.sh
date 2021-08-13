@@ -11,6 +11,9 @@ source "$CURR_DIR/common.sh"
 SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
+# enable dns resolution
+#sudo apt install -y libnss-myhostname
+
 # Create CI registry
 k3d registry create registry.localhost --no-help --port 5000
 
@@ -26,7 +29,6 @@ k3d cluster create "$CLUSTER_NAME" -s 1 -a 1 \
 
 kubectl config use-context k3d-"$CLUSTER_NAME"
 kubectl cluster-info
-
 
 k3d registry ls
 
