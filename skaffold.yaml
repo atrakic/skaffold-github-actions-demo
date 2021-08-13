@@ -3,6 +3,8 @@ kind: Config
 metadata:
   name: skaffold-github-actions-demo
 build:
+  local:
+    push: false
   artifacts:
     - image: pyjokes
       sync:

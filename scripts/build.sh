@@ -12,10 +12,10 @@ SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
 #skaffold config set --global local-cluster true
-skaffold config set --global default-repo k3d-registry.localhost:5000/skaffold
+#skaffold config set --global default-repo k3d-registry.localhost:5000/skaffold
 
 skaffold version
 
 skaffold run #--tail
 
-curl -sL http://k3d-registry.localhost:5000/v2/_catalog
+#curl -sL http://k3d-registry.localhost:5000/v2/_catalog

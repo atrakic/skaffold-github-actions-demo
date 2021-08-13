@@ -14,6 +14,8 @@ echo "$SCRIPTNAME"
 docker images
 kubectl get all -o wide
 
+docker exec k3d-"$CLUSTER_NAME"-agent-0 sh -c 'ctr image list -q'
+
 #APP=pyjokes-app
 #export POD=$(kubectl get pods --no-headers -o custom-columns=":metadata.name" -l "app=$APP")
 #kubectl exec -it "$POD" -- printenv
