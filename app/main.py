@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def jokes():
+def index():
     return pyjokes.get_joke()
 
 
