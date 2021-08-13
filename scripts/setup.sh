@@ -12,7 +12,7 @@ SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
 # enable dns resolution
-#sudo apt install -y libnss-myhostname
+sudo apt install -y libnss-myhostname
 
 # Create CI registry
 k3d registry create registry.localhost --no-help --port 5000
