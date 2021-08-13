@@ -12,7 +12,7 @@ SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
 # enable dns resolution
-sudo apt install -y libnss-myhostname
+#sudo apt install -y libnss-myhostname
 
 # Create CI registry
 k3d registry create registry.localhost --no-help --port 5000
@@ -42,5 +42,6 @@ netstat -tlpn
 
 kubectl get nodes -o wide
 
-# docker exec k3d-"$CLUSTER_NAME"-server-0 sh -c 'ctr version'
+docker exec k3d-"$CLUSTER_NAME"-server-0 sh -c 'ctr version'
+docker exec -it k3d-"$CLUSTER_NAME"-agent-0 sh -c "nslookup k3d-registry.localhost"
 # docker exec k3d-"$CLUSTER_NAME"-agent-1 sh -c 'ctr image list -q | grep "busybox:latest"'
