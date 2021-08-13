@@ -12,7 +12,7 @@ SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
 # Create CI registry
-#k3d registry create registry.localhost --no-help --port 5000
+k3d registry create registry.localhost --no-help --port 5000
 
 k3d cluster create "$CLUSTER_NAME" -s 1 -a 1 \
   --wait \
@@ -21,11 +21,14 @@ k3d cluster create "$CLUSTER_NAME" -s 1 -a 1 \
   --port 8443:443@loadbalancer \
   --k3s-server-arg "--no-deploy=metrics-server" \
   \
-  #--registry-use k3d-registry.localhost:5000 \
-  #--registry-config registries-local.yaml
+  --registry-use k3d-registry.localhost:5000 \
+  --registry-config registries-local.yaml
 
 kubectl config use-context k3d-"$CLUSTER_NAME"
 kubectl cluster-info
+
+
+k3d registry ls
 
 k3d cluster list
 

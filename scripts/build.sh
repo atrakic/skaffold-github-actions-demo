@@ -11,7 +11,9 @@ source "$CURR_DIR/common.sh"
 SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
-#k3d image import $APP -c $CLUSTER_NAME --verbose
+#skaffold config set --global local-cluster true
+skaffold config set --global default-repo localhost:5000/skaffold
 
-skaffold config set --global local-cluster true
+skaffold version
+
 skaffold run #--tail

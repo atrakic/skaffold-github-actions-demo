@@ -5,6 +5,9 @@ metadata:
 build:
   artifacts:
     - image: pyjokes
+      sync:
+        infer:
+          - '**/*.py'
 deploy:
   kubectl:
     manifests:
