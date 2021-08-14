@@ -16,12 +16,13 @@ skaffold version
 
 rm -rf ~/.skaffold/config
 
-profile=local
+#profile=local
 skaffold config set --global collect-metrics false
 skaffold config set --global local-cluster true
 #skaffold config set --global default-repo k3d-registry.localhost:5000/skaffold
-
 #skaffold run -p $profile
-skaffold run --verbosity='debug'
+
+k3d kubeconfig get "$CLUSTER_NAME" > _config
+TERM=dumb skaffold run --kubeconfig=_config --kube-context=k3d-"$CLUSTER_NAME" --verbosity='debug'
 
 #curl -sL http://k3d-registry.localhost:5000/v2/_catalog
