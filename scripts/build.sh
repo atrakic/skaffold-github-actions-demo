@@ -14,8 +14,9 @@ echo "$SCRIPTNAME"
 
 skaffold version
 
-skaffold config set --kube-context local local-cluster true
-# skaffold config set --global local-cluster true
+rm -rf ~/.skaffold/config
+#skaffold config set --kube-context local local-cluster true
+skaffold config set --global local-cluster true
 #skaffold config set --global default-repo k3d-registry.localhost:5000/skaffold
 
 skaffold run -p local
