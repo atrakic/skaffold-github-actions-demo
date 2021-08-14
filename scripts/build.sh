@@ -12,6 +12,8 @@ source "$CURR_DIR/common.sh"
 SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
+exit 0
+
 pwd
 ls -la
 

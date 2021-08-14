@@ -41,5 +41,13 @@ kubectl get nodes -o wide
 k3d kubeconfig get "$CLUSTER_NAME" > _config
 
 ls -la
+
+skaffold version
+
+rm -rf ~/.skaffold/config
+skaffold config set --global collect-metrics false
+skaffold config set --global local-cluster true
+skaffold run --kubeconfig=_config --kube-context=k3d-"$CLUSTER_NAME" --verbosity='debug'
+
 #docker exec k3d-"$CLUSTER_NAME"-server-0 sh -c 'ctr version'
 #docker exec k3d-"$CLUSTER_NAME"-agent-0 sh -c "nslookup k3d-registry.localhost"
