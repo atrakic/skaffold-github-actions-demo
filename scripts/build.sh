@@ -14,9 +14,6 @@ echo "$SCRIPTNAME"
 
 exit 0
 
-pwd
-ls -la
-
 skaffold version
 
 rm -rf ~/.skaffold/config
