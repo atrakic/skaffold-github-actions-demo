@@ -21,6 +21,7 @@ skaffold config set --global collect-metrics false
 skaffold config set --global local-cluster true
 #skaffold config set --global default-repo k3d-registry.localhost:5000/skaffold
 
-skaffold run -p $profile
+#skaffold run -p $profile
+skaffold run --verbosity='debug'
 
 #curl -sL http://k3d-registry.localhost:5000/v2/_catalog
