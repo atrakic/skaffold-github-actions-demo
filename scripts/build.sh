@@ -15,10 +15,12 @@ echo "$SCRIPTNAME"
 skaffold version
 
 rm -rf ~/.skaffold/config
-#skaffold config set --kube-context local local-cluster true
+
+profile=local
+skaffold config set --global collect-metrics false
 skaffold config set --global local-cluster true
 #skaffold config set --global default-repo k3d-registry.localhost:5000/skaffold
 
-skaffold run -p local
+skaffold run -p $profile
 
 #curl -sL http://k3d-registry.localhost:5000/v2/_catalog

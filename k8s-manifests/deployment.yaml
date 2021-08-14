@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pyjokes-deployment
+  labels:
+    app: pyjokes-app
 spec:
   replicas: 1
   selector:
@@ -16,3 +18,5 @@ spec:
         - name: pyjokes-app
           image: pyjokes
           imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000

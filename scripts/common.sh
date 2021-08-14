@@ -8,7 +8,7 @@ command -v $CMD >/dev/null 2>&1 || ( curl -s https://raw.githubusercontent.com/r
 
 CMD=skaffold
 command -v $CMD >/dev/null 2>&1 || ( curl -sSL -o /usr/local/bin/$CMD \
-  https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64  \
+  https://storage.googleapis.com/skaffold/releases/v1.30.0/skaffold-linux-amd64 \
   && chmod +x /usr/local/bin/$CMD; )
 
 #CMD=kustomize
