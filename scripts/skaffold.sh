@@ -13,8 +13,8 @@ SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
 skaffold version
-rm -rf ~/.skaffold/config
 
+rm -rf ~/.skaffold/config
 skaffold config set --global collect-metrics false
 skaffold config set --global local-cluster true
-skaffold run --verbosity='debug'
+skaffold run ##--verbosity='debug'

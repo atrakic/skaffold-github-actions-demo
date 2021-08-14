@@ -34,10 +34,10 @@ jobs:
         run: |
           ./scripts/skaffold.sh
 
-      - name: Skaffold tests
+      - name: Tests after skaffold run
         run: |
-          ./scripts/build.sh
+          ./scripts/test.sh
 
-      - name: Clean
+      - name: Clean up
         run: |
           ./scripts/clean.sh
