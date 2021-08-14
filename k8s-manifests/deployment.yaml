@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyjokes-deployment
+  labels:
+    app: pyjokes-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pyjokes-app
+  template:
+    metadata:
+      labels:
+        app: pyjokes-app
+    spec:
+      containers:
+        - name: pyjokes-app
+          image: pyjokes
+          ports:
+            - containerPort: 5000
