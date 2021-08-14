@@ -3,13 +3,16 @@ kind: Config
 metadata:
   name: skaffold-github-actions-demo
 build:
-  local:
-    push: false
+  tagPolicy:
+    sha256: {}
   artifacts:
     - image: pyjokes
-      sync:
-        infer:
-          - '**/*.py'
+
+profiles:
+  - name: local
+    deploy:
+      kubeContext: k3d-skaffold-demo
+
 deploy:
   kubectl:
     manifests:
