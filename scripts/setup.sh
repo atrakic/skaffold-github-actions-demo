@@ -37,5 +37,6 @@ netstat -tlpn
 
 kubectl get nodes -o wide
 
+k3d kubeconfig get "$CLUSTER_NAME" > _config
 #docker exec k3d-"$CLUSTER_NAME"-server-0 sh -c 'ctr version'
 #docker exec k3d-"$CLUSTER_NAME"-agent-0 sh -c "nslookup k3d-registry.localhost"

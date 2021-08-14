@@ -2,7 +2,7 @@
 
 set -e
 set -o pipefail
-[[ -n $DEBUG ]] && set -x
+set -x
 
 CURR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
@@ -11,6 +11,9 @@ source "$CURR_DIR/common.sh"
 
 SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
+
+pwd
+ls -la
 
 skaffold version
 
@@ -22,7 +25,7 @@ skaffold config set --global local-cluster true
 #skaffold config set --global default-repo k3d-registry.localhost:5000/skaffold
 #skaffold run -p $profile
 
-k3d kubeconfig get "$CLUSTER_NAME" > _config
+#k3d kubeconfig get "$CLUSTER_NAME" > _config
 skaffold run --kubeconfig=_config --kube-context=k3d-"$CLUSTER_NAME" --verbosity='debug'
 
 #curl -sL http://k3d-registry.localhost:5000/v2/_catalog
