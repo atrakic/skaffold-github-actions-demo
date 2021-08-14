@@ -17,6 +17,5 @@ spec:
       containers:
         - name: pyjokes-app
           image: pyjokes
-          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000

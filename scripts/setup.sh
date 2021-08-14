@@ -17,13 +17,8 @@ echo "$SCRIPTNAME"
 # Create CI registry
 #k3d registry create registry.localhost --no-help --port 5000
 
-k3d cluster create "$CLUSTER_NAME" -s 1 -a 1 \
-  --wait \
-  --timeout 60s \
-  --port 8080:80@loadbalancer \
-  --port 8443:443@loadbalancer \
-  --k3s-server-arg "--no-deploy=metrics-server" \
-  \
+k3d cluster create -c k3d.yaml
+#  \
   #--registry-use k3d-registry.localhost:5000 \
   #--registry-config registries-local.yaml
 
