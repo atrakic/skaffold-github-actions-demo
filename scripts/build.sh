@@ -17,5 +17,3 @@ skaffold config set --global local-cluster true
 skaffold version
 
 skaffold run #--tail
-
-#curl -sL http://k3d-registry.localhost:5000/v2/_catalog
