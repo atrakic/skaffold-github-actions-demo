@@ -12,7 +12,7 @@ source "$CURR_DIR/common.sh"
 SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
-k3d cluster create -c k3d.yaml
+k3d cluster create "$CLUSTER_NAME" -c k3d.yaml
 
 kubectl config use-context k3d-"$CLUSTER_NAME"
 kubectl cluster-info

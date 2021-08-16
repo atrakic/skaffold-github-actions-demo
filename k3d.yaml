@@ -1,6 +1,5 @@
 apiVersion: k3d.io/v1alpha2
 kind: Simple
-name: skaffold-demo
 image: rancher/k3s:latest
 servers: 1
 agents: 1

@@ -14,6 +14,6 @@ command -v $CMD >/dev/null 2>&1 || ( curl -sSL -o /usr/local/bin/$CMD \
 #CMD=kustomize
 #command -v $CMD >/dev/null 2>&1 || curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 
-CLUSTER_NAME=${CLUSTER_NAME:-skaffold-demo}
+CLUSTER_NAME=${CLUSTER_NAME:-$(basename "$(git rev-parse --show-toplevel)")}
 export CLUSTER_NAME
 

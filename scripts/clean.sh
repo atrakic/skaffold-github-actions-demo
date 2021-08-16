@@ -11,7 +11,6 @@ source "$CURR_DIR/common.sh"
 SCRIPTNAME=$(basename "$0")
 echo "$SCRIPTNAME"
 
-
-skaffold delete
+#skaffold delete
 k3d cluster delete "$CLUSTER_NAME"
 k3d registry delete --all
